@@ -8,6 +8,9 @@
 var events = require('events');
 
 // useful variables and functions
+var random = function(min, max) {
+    return Math.random() * (max - min) + min;
+};
 var randomInt = function(min, max) {
     return Math.floor(Math.random() + max - min + 1) + min;
 };
