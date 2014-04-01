@@ -4,14 +4,14 @@
  *
  * @breif Nasty implementation of the Promise/Deferred mode
  */
-var events = require('events');
+var EventEmitter = require('events').EventEmitter;
 var util = require('util');
 
 // Promise object
 var Promise = function() {
-  events.EventEmitter.call(this);
+  EventEmitter.call(this);
 };
-util.inherits(Promise, events.EventEmitter);
+util.inherits(Promise, EventEmitter);
 
 Promise.prototype.then = function(fulfilledHandler, errorHandler,
     progressHandler) {
