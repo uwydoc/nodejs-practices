@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 /**
  * @file js_jit_runner.js
  *
@@ -42,7 +43,7 @@ function visit(ast) {
 
 function visitProgram(ast) {
     assert.equal(ast.body.length, 1,
-            'Only one statement programs are supported');
+        'Only one statement programs are supported');
     assert.equal(ast.body[0].type, 'ExpressionStatement');
     visit.call(this, ast.body[0].expression);
 }
@@ -50,7 +51,7 @@ function visitProgram(ast) {
 function visitLiteral(ast) {
     assert.equal(typeof ast.value, 'number');
     assert.equal(ast.value | 0, ast.value,
-            'Only integer numbers are supported');
+        'Only integer numbers are supported');
     this.mov('rax', ast.value);
 }
 

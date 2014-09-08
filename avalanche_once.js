@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+
 /**
  * @file avalanche_once.js
  *
@@ -17,7 +18,7 @@ var randomInt = function(min, max) {
 var time = function() {
     return (new Date()).getTime() / 1000;
 };
-var nullfn = function() {}
+var nullfn = function() {};
 
 var proxy = new events.EventEmitter();
 var status = 'ready';
